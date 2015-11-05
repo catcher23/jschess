@@ -1,0 +1,90 @@
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 30px;
+}
+
+ul {
+  margin: 30px auto;
+  width: 300px;
+  border: 5px solid black;
+}
+
+li {
+  float: left;
+  width: 90px;
+  height: 90px;
+  border: 5px solid black;
+  background: gray;
+  cursor: pointer;
+}
+
+li:hover {
+  background: yellow;
+}
+
+.W,
+.B {
+  background: white;
+  cursor: default;
+}
+
+.W:hover,
+.B:hover {
+  background: white;
+}
+
+.W:after,
+.B:after {
+  display: block;
+  width: 100%;
+  font-size: 60px;
+  line-height: 80px;
+}
+
+.W:after {
+  content: "W";
+}
+
+.B:after {
+  content: "B";
+}
+
+.game-over li {
+  color: red;
+  cursor: default;
+  background: white;
+}
+
+.winner-W .W,
+.winner-B .B {
+  background: green;
+  color: white;
+}
+
+figcaption {
+  font-size: 30px;
+}
