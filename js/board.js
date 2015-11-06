@@ -1,3 +1,8 @@
+(function () {
+  if (typeof JSChess === "undefined") {
+    window.JSChess = {};
+  }
+
 function Board () {
   this.grid = Board.makeGrid()
 }
@@ -22,6 +27,11 @@ Board.makeGrid = function () {
 
 Board.colors = ["W", "B"];
 
+Board.populate = function () {
+
+};
+
+
 Board.prototype.checkMate = function () {
 
 };
@@ -33,3 +43,6 @@ Board.prototype.getPiece = function (callback) {
 Board.prototype.placePiece = function () {
 
 };
+
+
+})();

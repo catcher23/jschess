@@ -9,17 +9,17 @@
   <body>
     <h1>JSChess</h1>
 
-    <figure class="ttt"></figure>
+    <figure class="jschess"></figure>
 
     <script src="../js/jquery-2.1.1.js"></script>
     <!-- Whackjobs at GithubPages don't understand symlinks... -->
-    <script src="../core/game.js"></script>
-    <script src="../core/board.js"></script>
+    <script src="../js/game.js"></script>
+    <script src="../js/board.js"></script>
     <script src="../js/chess-view.js"></script>
 
     <script>
       $(function () {
-        new Chess.View(new Chess.Game(), $(".chess"));;
+        new JSChess.View($(".jschess"));
       });
     </script>
   </body>

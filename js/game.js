@@ -1,4 +1,8 @@
-var Board = require("./board");
+(function () {
+  if (typeof JSChess === "undefined") {
+    window.JSChess = {};
+  }
+
 
 function Game () {
   this.board = new Board();
@@ -17,9 +21,14 @@ Game.prototype.swapTurn = function () {
   } else {
     this.currentPlayer = Board.colors[0];
   }
+};
 
 Game.prototype.run = function () {
 
 };
 
+Game.prototype.isOver = function () {
+  return this.board.checkMate();
 };
+
+})();
