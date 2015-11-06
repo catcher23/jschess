@@ -34,11 +34,12 @@ ul {
 }
 
 li {
+  display: block;
   float: left;
   width: 90px;
   height: 90px;
   border: 3px solid black;
-  background: white;
+ content:url('../images/bb.png');
   cursor: pointer;
 }
 

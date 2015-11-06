@@ -71,7 +71,7 @@ View.prototype.handleKeyEvent = function (event) {
       for (var colIdx = 0; colIdx < 8; colIdx++) {
         var $li = $("<li>");
         $li.data("pos", [rowIdx, colIdx]);
-
+      
         $ul.append($li);
       }
     }
