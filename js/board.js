@@ -97,17 +97,21 @@ console.log(pos);
 };
 
 Board.prototype.placePiece = function (pos) {
-this.grid[pos[0]][pos[1]] = this.gottenPiece;
-if (this.oldPos !== pos) {
-this.grid[this.oldPos[0]][this.oldPos[1]] = null;
-} else {
-  this.selectValid();
+
+
+  if (this.oldPos !== pos && this.gottenPiece.validMove(this.oldPos, pos)) {
+    this.grid[pos[0]][pos[1]] = this.gottenPiece;
+    this.grid[this.oldPos[0]][this.oldPos[1]] = null;
+  } else {
+    this.selectValid();
 }
 console.log(this.grid[pos[0]][pos[1]]);
 console.log('placePiece');
 console.log(pos);
 
 };
+
+
 
 Board.prototype.selectValid = function () {
   var that = this;
@@ -116,6 +120,7 @@ Board.prototype.selectValid = function () {
     $('div.selectValid').fadeOut("linear");
   }, 1600)
 };
+
 Board.prototype.checkMate = function () {
 
 };

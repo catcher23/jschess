@@ -38,6 +38,8 @@ View.prototype.handleKeyEvent = function (event) {
     if (this.game.pieceSelected) {
       var flatCoord = (pos[0] * 8) + pos[1];
       this.$li.eq(flatCoord).addClass('selected');
+
+      
     };
   };
 
