@@ -3,8 +3,9 @@
     window.JSChess = {};
   }
 
-function Board () {
+var Board = JSChess.Board = function () {
   this.grid = Board.makeGrid()
+  this.populate();
 }
 
 Board.isValidPos = function (pos) {
@@ -19,7 +20,7 @@ Board.makeGrid = function () {
   for (var i = 0; i <= 7; i++) {
     grid.push([]);
     for (var j = 0; j <= 7; j++) {
-      grid[i].push(null);s
+      grid[i].push(null);
     }
   }
   return grid;
@@ -27,7 +28,14 @@ Board.makeGrid = function () {
 
 Board.colors = ["W", "B"];
 
-Board.populate = function () {
+Board.prototype.populate = function () {
+
+  this.grid[0][1] = new JSChess.Knight({
+    className: 'bn',
+  });
+  this.grid[0][6] = new JSChess.Knight({
+    className: 'bn',
+  });
 
 };
 
@@ -36,11 +44,17 @@ Board.prototype.checkMate = function () {
 
 };
 
-Board.prototype.getPiece = function (callback) {
+Board.prototype.getPiece = function (pos) {
+console.log(this.grid[pos[0]][pos[1]]);
+console.log('getPiece');
+console.log(pos);
 
 };
 
-Board.prototype.placePiece = function () {
+Board.prototype.placePiece = function (pos) {
+console.log(this.grid[pos[0]][pos[1]]);
+console.log('placePiece');
+console.log(pos);
 
 };
 

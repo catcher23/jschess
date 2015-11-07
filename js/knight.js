@@ -3,7 +3,7 @@
     window.JSChess = {};
   }
   var Knight = JSChess.Knight = function (options) {
-
+    this.className = options.className;
 
   };
 

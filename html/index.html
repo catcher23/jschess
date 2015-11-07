@@ -15,11 +15,20 @@
     <!-- Whackjobs at GithubPages don't understand symlinks... -->
     <script src="../js/game.js"></script>
     <script src="../js/board.js"></script>
+    <script src="../js/util.js"></script>
     <script src="../js/chess-view.js"></script>
+    <script src="../js/human-player.js"></script>
+    <script src="../js/computer-player.js"></script>
+    <script src="../js/piece.js"></script>
+    <script src="../js/slideable.js"></script>
+    <script src="../js/stepable.js"></script>
+    <script src="../js/knight.js"></script>
 
     <script>
       $(function () {
-        new JSChess.View($(".jschess"));
+        new JSChess.View(
+          new JSChess.Game(new JSChess.humanPlayer, new JSChess.computerPlayer),
+          $(".jschess"));
       });
     </script>
   </body>

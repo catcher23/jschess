@@ -3,9 +3,9 @@
     window.JSChess = {};
   }
 
-  var View = JSChess.View = function ($el) {
+  var View = JSChess.View = function (game, $el) {
     this.$el = $el;
-
+    this.game = game;
     this.setupBoard();
     this.handleClickEvent();
     $(window).on("keydown", this.handleKeyEvent.bind(this));
@@ -33,49 +33,40 @@ View.prototype.handleKeyEvent = function (event) {
 
   View.prototype.makeMove = function ($square) {
     var pos = $square.data("pos");
-    var currentPlayer = this.game.currentPlayer;
+    this.game.playMove(pos);
+    this.render();
+  };
 
-    try {
-      this.game.playMove(pos);
-    } catch (e) {
-      alert("Invalid move! Try again.");
-      return;
-    }
+  View.prototype.render = function () {
 
-    $square.addClass(currentPlayer);
+for (var i = 0; i < 8; i++) {
+  for (var j = 0; j < 8; j++) {
+    if (this.game.board.grid[i][j] !== null) {
+    className = this.game.board.grid[i][j].className;
+    this.updateClasses([i,j], className);
+  }
+  }
+}
+  };
 
-    if (this.game.isOver()) {
-      // cleanup click handlers.
-      this.$el.off("click");
-      this.$el.addClass("game-over");
-
-      var winner = this.game.winner();
-      var $figcaption = $("<figcaption>");
-
-      if (winner) {
-        this.$el.addClass("winner-" + winner);
-        $figcaption.html("You win, " + winner + "!");
-      } else {
-        $figcaption.html("It's a draw!");
-      }
-
-      this.$el.append($figcaption);
-    }
+  View.prototype.updateClasses = function(pos, className) {
+    var flatCoord = (pos[0] * 8) + pos[1];
+    this.$li.eq(flatCoord).addClass(className);
   };
 
   View.prototype.setupBoard = function () {
     var $ul = $("<ul>");
     $ul.addClass("group");
 
-    for (var rowIdx = 0; rowIdx < 8; rowIdx++) {
-      for (var colIdx = 0; colIdx < 8; colIdx++) {
+    for (var i = 0; i < 8; i++) {
+      for (var j = 0; j < 8; j++) {
         var $li = $("<li>");
-        $li.data("pos", [rowIdx, colIdx]);
-      
+        $li.data("pos", [i, j]);
         $ul.append($li);
       }
     }
-
     this.$el.append($ul);
+    this.$li = this.$el.find("li")
+    this.render();
   };
 })();
