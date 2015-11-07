@@ -12,16 +12,16 @@ var Game = JSChess.Game = function (p1, p2) {
 
 Game.prototype.playMove = function (pos) {
   if (this.pieceSelected) {
-  this.board.placePiece(pos, this.currentPlayer);
+  this.board.placePiece(pos);
   this.pieceSelected = false;
   this.swapTurn();
 }else{
-  this.board.getPiece(pos, this.currentPlayer);
-  this.pieceSelected = true;
+  this.board.getPiece(pos);
+  if (this.board.grid[pos[0]][pos[1]] !== null) {
+    this.pieceSelected = true;
+  }
 }
-
 };
-
 
 
 

@@ -8,8 +8,8 @@
 
   <body>
     <h1>JSChess</h1>
-
     <figure class="jschess"></figure>
+    <div class="selectValid" style="display:none">Please select a valid square</div>
 
     <script src="../js/jquery-2.1.1.js"></script>
     <!-- Whackjobs at GithubPages don't understand symlinks... -->
@@ -19,10 +19,15 @@
     <script src="../js/chess-view.js"></script>
     <script src="../js/human-player.js"></script>
     <script src="../js/computer-player.js"></script>
-    <script src="../js/piece.js"></script>
-    <script src="../js/slideable.js"></script>
-    <script src="../js/stepable.js"></script>
-    <script src="../js/knight.js"></script>
+    <script src="../js/pieces/piece.js"></script>
+    <script src="../js/pieces/slideables/slideable.js"></script>
+    <script src="../js/pieces/slideables/bishop.js"></script>
+    <script src="../js/pieces/slideables/queen.js"></script>
+    <script src="../js/pieces/slideables/rook.js"></script>
+    <script src="../js/pieces/stepables/stepable.js"></script>
+    <script src="../js/pieces/stepables/knight.js"></script>
+    <script src="../js/pieces/stepables/king.js"></script>
+    <script src="../js/pieces/stepables/pawn.js"></script>
 
     <script>
       $(function () {

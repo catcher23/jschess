@@ -35,6 +35,10 @@ View.prototype.handleKeyEvent = function (event) {
     var pos = $square.data("pos");
     this.game.playMove(pos);
     this.render();
+    if (this.game.pieceSelected) {
+      var flatCoord = (pos[0] * 8) + pos[1];
+      this.$li.eq(flatCoord).addClass('selected');
+    };
   };
 
   View.prototype.render = function () {
@@ -44,6 +48,8 @@ for (var i = 0; i < 8; i++) {
     if (this.game.board.grid[i][j] !== null) {
     className = this.game.board.grid[i][j].className;
     this.updateClasses([i,j], className);
+  } else {
+    this.removeClasses([i,j])
   }
   }
 }
@@ -51,7 +57,14 @@ for (var i = 0; i < 8; i++) {
 
   View.prototype.updateClasses = function(pos, className) {
     var flatCoord = (pos[0] * 8) + pos[1];
+    this.$li.eq(flatCoord).removeClass();
     this.$li.eq(flatCoord).addClass(className);
+
+  };
+
+  View.prototype.removeClasses = function(pos) {
+    var flatCoord = (pos[0] * 8) + pos[1];
+    this.$li.eq(flatCoord).removeClass();
   };
 
   View.prototype.setupBoard = function () {

@@ -1,4 +1,4 @@
-html, body, figure, figcaption, ul, li, h1 {
+html, body, figure, figcaption, ul, li, h1e {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,60 +23,75 @@ body {
 }
 
 h1 {
+  color: #383838 ;
   font-size: 30px;
   margin: 30px;
 }
 
 ul {
   margin: 30px auto;
-  width: 768px;
-  border: 3px solid black;
+  width: 744px;
+  border: 1px solid #383838 ;
+
 }
 
 li {
   display: block;
   float: left;
-  width: 90px;
-  height: 90px;
-  border: 3px solid black;
-    background: white;
+  width: 91px;
+  height: 91px;
+  border: 1px solid #383838 ;
+  background: white;
   cursor: pointer;
 }
 
+.selected, .selected:hover {
+  background: lawngreen;
+}
+
+.bb {
+  content:url('../images/bb.png');
+}
+.bk {
+  content:url('../images/bk.png');
+}
 .bn {
   content:url('../images/bn.png');
+}
+.bp {
+  content:url('../images/bp.png');
+}
+.bq {
+  content:url('../images/bq.png');
+}
+.br {
+  content:url('../images/br.png');
+}
+.wb {
+  content:url('../images/wb.png');
+}
+.wk {
+  content:url('../images/wk.png');
+}
+.wn {
+  content:url('../images/wn.png');
+}
+
+.wp {
+  content:url('../images/wp.png');
+}
+.wq {
+  content:url('../images/wq.png');
+}
+
+.wr {
+  content:url('../images/wr.png');
 }
 
 li:hover {
   background: lightgreen;
 }
 
-.W,
-.B {
-  background: white;
-  cursor: default;
-}
-
-.W:hover,
-.B:hover {
-  background: white;
-}
-
-.W:after,
-.B:after {
-  display: block;
-  width: 100%;
-  font-size: 60px;
-  line-height: 80px;
-}
-
-.W:after {
-  content: "W";
-}
-
-.B:after {
-  content: "B";
-}
 
 .game-over li {
   color: red;
@@ -92,4 +107,19 @@ li:hover {
 
 figcaption {
   font-size: 30px;
+}
+
+.selectValid{
+  font-weight:bold;
+  font-size: 70;
+  text-shadow:2px 2px 1px #fff;
+
+  position: relative;
+  text-align:center;
+  bottom:10px;
+  background:transparent;
+  color:green;
+
+  border:none;
+
 }
