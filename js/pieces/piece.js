@@ -14,12 +14,14 @@ Piece.prototype.allMoves = function (pos) {
 
   for (var i = 0; i <= 7; i++) {
     for (var j = 0; j <= 7; j++) {
-      if (this.validMove(this.pos, [i,j])) {
+      if (this.validMove(this.pos, [i,j]) &&
+        (this.board.grid[i][j] == null ||
+        this.board.grid[i][j].color !== this.color)) {
         moves.push([i,j]);
       }
     }
   };
-  
+
   return moves;
 };
 

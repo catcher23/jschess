@@ -34,82 +34,98 @@ Board.prototype.populate = function () {
   this.grid[0][1] = new JSChess.Knight({
     className: 'bn',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[0][6] = new JSChess.Knight({
     className: 'bn',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[7][1] = new JSChess.Knight({
     className: 'wn',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[7][6] = new JSChess.Knight({
     className: 'wn',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[0][0] = new JSChess.Rook({
     className: 'br',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[0][7] = new JSChess.Rook({
     className: 'br',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[7][0] = new JSChess.Rook({
     className: 'wr',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[7][7] = new JSChess.Rook({
     className: 'wr',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[0][2] = new JSChess.Bishop({
     className: 'bb',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[0][5] = new JSChess.Bishop({
     className: 'bb',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[7][2] = new JSChess.Bishop({
     className: 'wb',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[7][5] = new JSChess.Bishop({
     className: 'wb',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[0][3] = new JSChess.Queen({
     className: 'bq',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[0][4] = new JSChess.King({
     className: 'bk',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'black'
   });
   this.grid[7][3] = new JSChess.Queen({
     className: 'wq',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
   this.grid[7][4] = new JSChess.King({
     className: 'wk',
     board: this,
-    game: this.game
+    game: this.game,
+    color: 'white'
   });
 
 };

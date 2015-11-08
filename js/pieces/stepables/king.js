@@ -4,6 +4,7 @@
   }
   var King = JSChess.King = function (options) {
     this.className = options.className;
+    JSChess.Stepable.call(this, options)
   };
     JSChess.Util.inherits(King, JSChess.Stepable);
 

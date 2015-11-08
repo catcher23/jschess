@@ -1,4 +1,4 @@
-html, body, figure, figcaption, ul, li, h1e {
+html, body, figure, figcaption, ul, li, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -33,6 +33,7 @@ ul {
   width: 744px;
   border: 1px solid #383838 ;
 
+
 }
 
 li {
@@ -45,6 +46,16 @@ li {
   cursor: pointer;
 }
 
+span {
+  display: block;
+  float: left;
+  width: 91px;
+  height: 91px;
+  border: 1px solid #383838 ;
+  background: black;
+  cursor: pointer;
+}
+
 .selected, .selected:hover {
   background: lawngreen;
 }
@@ -54,6 +65,7 @@ li {
 }
 .bb {
   content:url('../images/bb.png');
+  
 }
 .bk {
   content:url('../images/bk.png');

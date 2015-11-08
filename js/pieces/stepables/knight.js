@@ -4,8 +4,6 @@
   }
   var Knight = JSChess.Knight = function (options) {
     this.className = options.className;
-    this.game = options.game;
-    this.pos = options.pos;
     JSChess.Stepable.call(this, options)
 
   };

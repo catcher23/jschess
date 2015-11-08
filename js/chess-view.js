@@ -88,6 +88,8 @@ for (var i = 0; i < 8; i++) {
     }
     this.$el.append($ul);
     this.$li = this.$el.find("li")
+
+
     this.render();
   };
 })();

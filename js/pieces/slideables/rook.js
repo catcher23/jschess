@@ -4,8 +4,10 @@
   }
   var Rook = JSChess.Rook = function (options) {
     this.className = options.className;
-  };
-    JSChess.Util.inherits(Rook, JSChess.Slideable);
+    this.className = options.className;
+    JSChess.SlideHoriz.call(this, options)
+};
+  JSChess.Util.inherits(Rook, JSChess.SlideHoriz);
 
     Rook.prototype.validMove = function (oldPos, pos) {
       return (
@@ -17,7 +19,9 @@
 
       for (var i = 0; i <= 7; i++) {
         for (var j = 0; j <= 7; j++) {
-          if (this.validMove(this.pos, [i,j])) {
+          if (this.validMove(this.pos, [i,j]) &&
+            (this.board.grid[i][j] == null ||
+            this.board.grid[i][j].color !== this.color)) {
             moves.push([i,j]);
           }
         }
