@@ -30,6 +30,25 @@ Board.makeGrid = function () {
 Board.colors = ["W", "B"];
 
 Board.prototype.populate = function () {
+  var that = this;
+
+    for (var i = 0; i < that.grid[1].length; i++) {
+      that.grid[1][i] = new JSChess.Pawn({
+        className: 'bp',
+        board: that,
+        game: that.game,
+        color: 'black'
+    });
+  }
+
+    for (var i = 0; i < that.grid[6].length; i++) {
+      that.grid[6][i] = new JSChess.Pawn({
+        className: 'wp',
+        board: that,
+        game: that.game,
+        color: 'white'
+    });
+  }
 
   this.grid[0][1] = new JSChess.Knight({
     className: 'bn',

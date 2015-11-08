@@ -7,4 +7,7 @@
     JSChess.Stepable.call(this, options)
   };
     JSChess.Util.inherits(Pawn, JSChess.Stepable);
+
+    Pawn.prototype.validMove = function (oldPos, pos) {
+    };
 })();

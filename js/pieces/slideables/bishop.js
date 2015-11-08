@@ -10,5 +10,6 @@
     JSChess.Util.inherits(Bishop, JSChess.SlideDiag);
 
     Bishop.prototype.validMove = function (oldPos, pos) {
-      };
+    };
+    
 })();
