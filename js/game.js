@@ -5,7 +5,7 @@
 
 
 var Game = JSChess.Game = function (p1, p2) {
-  this.board = new JSChess.Board();
+  this.board = new JSChess.Board(this);
   this.currentPlayer = p1;
   this.pieceSelected = false;
 };

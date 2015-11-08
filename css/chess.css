@@ -49,6 +49,9 @@ li {
   background: lawngreen;
 }
 
+.possibleMoves {
+  background: skyblue;
+}
 .bb {
   content:url('../images/bb.png');
 }

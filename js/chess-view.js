@@ -32,6 +32,7 @@ View.prototype.handleKeyEvent = function (event) {
   };
 
   View.prototype.makeMove = function ($square) {
+    var that = this;
     var pos = $square.data("pos");
     this.game.playMove(pos);
     this.render();
@@ -39,7 +40,12 @@ View.prototype.handleKeyEvent = function (event) {
       var flatCoord = (pos[0] * 8) + pos[1];
       this.$li.eq(flatCoord).addClass('selected');
 
-      
+      pieceType = this.game.board.grid[pos[0]][pos[1]];
+      pieceType.allMoves().forEach(function(move) {
+        flatCoord = (move[0] * 8) + move[1];
+        that.$li.eq(flatCoord).addClass('possibleMoves');
+      });
+
     };
   };
 

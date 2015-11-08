@@ -6,4 +6,7 @@
       this.className = options.className;
   };
     JSChess.Util.inherits(Bishop, JSChess.Slideable);
+
+    Bishop.prototype.validMove = function (oldPos, pos) {
+      };
 })();
