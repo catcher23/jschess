@@ -20,7 +20,7 @@ Piece.prototype.allMoves = function (pos) {
       }
     }
   };
-console.log(moves);
+
   return moves;
 };
 
