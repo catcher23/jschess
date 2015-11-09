@@ -11,6 +11,7 @@
     JSChess.Util.inherits(SlideHoriz, JSChess.Piece);
   SlideHoriz.prototype.allMoves = function (pos) {
     var moves = [];
+  
     return moves.concat(this.horizMoves());
   };
 
@@ -24,6 +25,7 @@
       move = [dx, dy]
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
+        console.log(move);
         dy += 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
         horizMoves.push(move);
@@ -42,6 +44,7 @@
       move = [dx, dy]
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
+        console.log(move);
         dx += 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
         horizMoves.push(move);
@@ -60,6 +63,7 @@
       move = [dx, dy]
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
+        console.log(move);
         dx -= 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
         horizMoves.push(move);
@@ -78,6 +82,7 @@
       move = [dx, dy]
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
+        console.log(move);
         dy -= 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
         horizMoves.push(move);

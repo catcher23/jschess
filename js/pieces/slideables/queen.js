@@ -53,16 +53,21 @@
       while (dx >= 0) {
         move = [dx, dy]
         if (this.board.grid[dx][dy] == null)  {
+          console.log('a')
           horizMoves.push(move);
           dx -= 1;
-        } else if (this.board.grid[dx][dy].color !== this.color) {
-          horizMoves.push(move);
-          break;
         } else if (this.board.grid[dx][dy].pos == this.pos) {
+
+            console.log('b')
           dx -= 1;
           continue;
-        } else {
+        } else if (this.board.grid[dx][dy].color !== this.color) {
+            console.log('c')
+          horizMoves.push(move);
           break;
+        } else {
+          break
+            console.log('d')
         }
       }
 

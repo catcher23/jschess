@@ -178,6 +178,7 @@ Board.prototype.placePiece = function (pos) {
 
   if (this.oldPos !== pos && includesMove) {
     this.grid[pos[0]][pos[1]] = this.gottenPiece;
+    this.gottenPiece.pos = [pos[0], pos[1]];
     this.grid[this.oldPos[0]][this.oldPos[1]] = null;
   } else {
     this.selectValid();
