@@ -6,28 +6,34 @@
 
 var Game = JSChess.Game = function (p1, p2) {
   this.board = new JSChess.Board(this);
+  this.players = [p1, p2];
   this.currentPlayer = p1;
+  this.p2 = p2;
   this.pieceSelected = false;
+
 };
 
 Game.prototype.playMove = function (pos) {
   if (this.pieceSelected) {
-  this.board.placePiece(pos);
-  this.pieceSelected = false;
-  this.swapTurn();
-}else{
-  this.board.getPiece(pos);
-  if (this.board.grid[pos[0]][pos[1]] !== null) {
-    this.pieceSelected = true;
+    this.board.placePiece(pos);
+    this.pieceSelected = false;
+    this.swapTurn();
+
+  }else{
+    this.board.getPiece(pos);
+    if (this.board.grid[pos[0]][pos[1]] !== null) {
+      this.pieceSelected = true;
+
+    }
   }
-}
 };
 
 
-
 Game.prototype.swapTurn = function () {
-  if (this.currentPlayer === this.p1) {
+  if (this.currentPlayer == this.p1) {
     this.currentPlayer = this.p2;
+
+    this.currentPlayer.makeMove();
   } else {
     this.currentPlayer = this.p1;
   }
@@ -35,7 +41,20 @@ Game.prototype.swapTurn = function () {
 
 Game.prototype.run = function () {
 
+  while(this.board.checkMate(this.currentPlayer.color) == false) {
+
+    from_pos = this.currentPlayer.makeMove(this.board)
+    to_pos =  this.currentPlayer.makeMove(this.board)
+
+  }
 };
+
+Game.prototype.board = function () {
+
+
+};
+
+
 
 Game.prototype.isOver = function () {
   return this.board.checkMate();

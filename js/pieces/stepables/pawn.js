@@ -10,6 +10,9 @@
     Pawn.prototype.validMove = function (oldPos, pos) {
       // Black
       if (this.board.grid[oldPos[0]][oldPos[1]].color == 'black') {
+        if (oldPos[0] == 7){
+          return false;
+        };
         // second to last square
         if (oldPos[0] == 6 &&
           this.board.grid[oldPos[0]][oldPos[1]].color == 'black') {
@@ -200,6 +203,9 @@
       }
       // White
       if (this.board.grid[oldPos[0]][oldPos[1]].color == 'white') {
+        if (oldPos[0] == 0){
+          return false;
+        };
       // second to last square
       if (oldPos[0] == 1 &&
         this.board.grid[oldPos[0]][oldPos[1]].color == 'white') {

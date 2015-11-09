@@ -3,7 +3,9 @@
     window.JSChess = {};
   }
   var humanPlayer = JSChess.humanPlayer = function (options) {
-
+    this.color = 'white'
   };
+
+  
 
 })();

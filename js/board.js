@@ -161,9 +161,7 @@ Board.prototype.getPiece = function (pos) {
     this.selectValid();
   }
 
-console.log(this.grid[pos[0]][pos[1]]);
-console.log('getPiece');
-console.log(pos);
+
 
 };
 
@@ -180,16 +178,12 @@ Board.prototype.placePiece = function (pos) {
     this.grid[pos[0]][pos[1]] = this.gottenPiece;
     this.gottenPiece.pos = [pos[0], pos[1]];
     this.grid[this.oldPos[0]][this.oldPos[1]] = null;
+    this.inCheck(this.gottenPiece.allMoves(), this.gottenPiece.color);
   } else {
     this.selectValid();
 }
-console.log(this.grid[pos[0]][pos[1]]);
-console.log('placePiece');
-console.log(pos);
 
 };
-
-
 
 Board.prototype.selectValid = function () {
   var that = this;
@@ -199,9 +193,29 @@ Board.prototype.selectValid = function () {
   }, 1600)
 };
 
-Board.prototype.checkMate = function () {
-
+Board.prototype.checkMate = function (color) {
+return false
 };
 
+Board.prototype.inCheck = function (allMoves, color) {
+  var that = this;
+
+  allMoves.forEach(function(move){
+    if (move == that.findKing()){
+      return true;
+    }
+  });
+};
+
+Board.prototype.findKing = function (color) {
+  for (var i = 0; i <= 7; i++) {
+    for (var j = 0; j <= 7; j++) {
+      if(this.grid[i][j] instanceof JSChess.King &&
+      this.grid[i][j].color == color) {
+        return [i,j];
+      }
+    }
+  }
+};
 
 })();
