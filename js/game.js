@@ -23,7 +23,6 @@ Game.prototype.playMove = function (pos) {
   }else{
     this.board.getPiece(pos);
     if (this.board.grid[pos[0]][pos[1]] !== null) {
-      this.pieceSelected = true;
     }
   }
 };
