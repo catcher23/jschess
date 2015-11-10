@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  color: #383838 ;
+  color: darkgreen ;
   font-size: 30px;
   margin: 30px;
 }
@@ -31,7 +31,8 @@ h1 {
 ul {
   margin: 30px auto;
   width: 744px;
-  border: 1px solid #383838 ;
+  border: 6px solid #282828 ;
+  border-radius: 10px;
 
 
 }
@@ -41,9 +42,23 @@ li {
   float: left;
   width: 91px;
   height: 91px;
-  border: 1px solid #383838 ;
+  border: 1px solid #282828 ;
   background: white;
   cursor: pointer;
+}
+
+
+
+li:nth-child(-2n+8),
+li:nth-child(8) ~ li:nth-child(-2n+15),
+li:nth-child(16) ~ li:nth-child(-2n+24),
+li:nth-child(24) ~ li:nth-child(-2n+31),
+li:nth-child(32) ~ li:nth-child(-2n+40),
+li:nth-child(40) ~ li:nth-child(-2n+47),
+li:nth-child(48) ~ li:nth-child(-2n+56),
+li:nth-child(56) ~ li:nth-child(-2n+63) {
+    background: #303030 ;
+    z-index: 1;
 }
 
 span {
@@ -57,15 +72,16 @@ span {
 }
 
 .selected, .selected:hover {
-  background: lawngreen;
+  background: lightgreen !important;
 }
 
 .possibleMoves {
-  background: skyblue;
+  background: lightgreen !important;
+
 }
 .bb {
   content:url('../images/bb.png');
-  
+
 }
 .bk {
   content:url('../images/bk.png');
@@ -104,7 +120,7 @@ span {
 }
 
 li:hover {
-  background: lightgreen;
+  background: lightgreen !important;
 }
 
 

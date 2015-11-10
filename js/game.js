@@ -41,21 +41,6 @@ Game.prototype.swapTurn = function () {
   }
 };
 
-Game.prototype.run = function () {
-
-  while(this.board.checkMate(this.currentPlayer.color) == false) {
-
-    from_pos = this.currentPlayer.makeMove(this.board)
-    to_pos =  this.currentPlayer.makeMove(this.board)
-
-  }
-};
-
-Game.prototype.board = function () {
-
-
-};
-
 
 
 Game.prototype.isOver = function () {

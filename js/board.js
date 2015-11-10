@@ -7,7 +7,7 @@ var Board = JSChess.Board = function (game) {
   this.grid = Board.makeGrid();
   this.game = game;
   this.populate();
-}
+};
 
 Board.isValidPos = function (pos) {
   return (
@@ -190,7 +190,7 @@ Board.prototype.getPiece = function (pos) {
 };
 
 Board.prototype.placePiece = function (pos) {
-
+var that = this;
   var includesMove = false
   this.gottenPiece.allMoves().forEach(function(move){
   if (pos[0] == move[0] && pos[1] == move[1]) {

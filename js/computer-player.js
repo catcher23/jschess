@@ -27,7 +27,7 @@
 
     if (computerPieces.length == 0) {
       console.log('there');
-      this.game.isOver();
+      // this.game.isOver();
     } else {
       this.isCheckMate(computerPieces);
       while (true) {
@@ -39,10 +39,12 @@
           grid[piece.pos[0]][piece.pos[1]] = null;
           piece.pos = newMove;
 
-          return grid[newMove[0]][newMove[1]] = piece;
+
           if (that.isInCheck(humanPieces)) {
             alert('King is in Check');
           }
+        return  grid[newMove[0]][newMove[1]] = piece;
+
         }
       }
     }
