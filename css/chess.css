@@ -91,6 +91,7 @@ span {
 }
 .bp {
   content:url('../images/bp.png');
+  background-position: 20px;
 }
 .bq {
   content:url('../images/bq.png');
