@@ -1,6 +1,6 @@
 
 # JSChess
-Chess engine written in pure Javascript with a fully-playable JQuery front-end.
+Chess written in pure Javascript with a JQuery front-end.
 
 ## Play here
 [link][game]
@@ -21,14 +21,4 @@ Technology used
 - JavaScript
 
 ### Game
-Click on a square to select a piece. The selected square will be highlighted in green, and all possible moves from that position are highlighted in blue. The game ends when there is a checkmate, and resets.
-
-
-#### Enemy Movement AI
-Boid objects has their sights. Currently, the logic is having them flock
-with the same kind when they 'see' each other. Thanks to the prototypical
-inheritance implementation and modular design, this AI can be easily used on
-other fun logics, including:
-- Chasing Mode
-- Scaring Away Mode
-- Protecting Weapons from Picked up Mode
+Click on a square to select a piece. The selected square will be highlighted in green, and all possible moves from that position are highlighted as well. The game ends when there is a checkmate, and resets.
