@@ -179,13 +179,14 @@ Board.prototype.populate = function () {
 Board.prototype.getPiece = function (pos) {
   var gottenPiece = this.grid[pos[0]][pos[1]];
   if (gottenPiece !== null && this.game.currentPlayer.color == gottenPiece.color) {
-    
+
     gottenPiece.pos = pos;
     gottenPiece.allMoves(pos);
     this.gottenPiece = gottenPiece
     this.oldPos = pos;
-
+    this.game.pieceSelected = true;
   } else {
+
     this.selectValid();
   }
 };
