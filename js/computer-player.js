@@ -10,7 +10,7 @@
   computerPlayer.prototype.makeMove = function () {
 
     var that = this;
-    var grid = this.game.board.grid
+    var grid = this.game.board.grid;
     var computerPieces = [];
     var humanPieces = [];
     grid.forEach(function(row){
@@ -26,8 +26,6 @@
     });
 
     if (computerPieces.length == 0) {
-      console.log('there');
-      // this.game.isOver();
     } else {
       this.isCheckMate(computerPieces);
       while (true) {
@@ -48,12 +46,11 @@
         }
       }
     }
-
   };
 
   computerPlayer.prototype.isInCheck = function (humanPieces) {
 
-    kingPos = this.game.board.findKing(this.color);
+    var kingPos = this.game.board.findKing(this.color);
     humanPieces.forEach(function(piece){
       piece.allMoves().forEach(function(move){
 
@@ -67,7 +64,7 @@
 
   computerPlayer.prototype.isCheckMate = function (computerPieces) {
     var that = this;
-    kingPos = this.game.board.findKing(this.color)
+    var kingPos = this.game.board.findKing(this.color);
 
       if (kingPos == undefined) {
         that.game.isOver();
@@ -75,7 +72,7 @@
     var everyMove = [];
       computerPieces.forEach(function(piece){
         everyMove = everyMove.concat(piece.allMoves());
-      })
+      });
 
       if (everyMove.length == 0) {
         that.game.isOver();
@@ -85,7 +82,7 @@
 
 
   computerPlayer.prototype.pickRandomPiece = function (computerPieces) {
-    var randomIndex = Math.floor(Math.random() * (computerPieces.length))
+    var randomIndex = Math.floor(Math.random() * (computerPieces.length));
     return computerPieces[randomIndex];
   };
 

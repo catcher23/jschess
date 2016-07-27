@@ -9,6 +9,8 @@ var Board = JSChess.Board = function (game) {
   this.populate();
 };
 
+Board.colors = ["W", "B"];
+
 Board.isValidPos = function (pos) {
   return (
     (0 <= pos[0]) && (pos[0] <= 7) && (0 <= pos[1]) && (pos[1] <= 7)
@@ -26,8 +28,7 @@ Board.makeGrid = function () {
   }
   return grid;
 };
-
-Board.colors = ["W", "B"];
+  
 Board.prototype.reset = function () {
 
   for (var i = 0; i <= 7; i++) {
@@ -182,7 +183,7 @@ Board.prototype.getPiece = function (pos) {
 
     gottenPiece.pos = pos;
     gottenPiece.allMoves(pos);
-    this.gottenPiece = gottenPiece
+    this.gottenPiece = gottenPiece;
     this.oldPos = pos;
     this.game.pieceSelected = true;
   } else {
@@ -192,12 +193,11 @@ Board.prototype.getPiece = function (pos) {
 };
 
 Board.prototype.placePiece = function (pos) {
-var that = this;
-  var includesMove = false
+  var includesMove = false;
   this.gottenPiece.allMoves().forEach(function(move){
   if (pos[0] == move[0] && pos[1] == move[1]) {
     includesMove = true
-    };
+    }
   });
 
   if (this.oldPos !== pos && includesMove) {
@@ -215,8 +215,8 @@ var that = this;
 };
 
 Board.prototype.selectValid = function () {
-  var that = this;
   $('div.selectValid').fadeIn("linear");
+  
   setTimeout(function(){
     $('div.selectValid').fadeOut("linear");
   }, 1600)

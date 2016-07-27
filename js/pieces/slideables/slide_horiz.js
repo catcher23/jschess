@@ -19,10 +19,10 @@
     var horizMoves = [];
     var move = '';
 
-    var dx = this.pos[0]
-    var dy = this.pos[1]
+    var dx = this.pos[0];
+    var dy = this.pos[1];
     while (dy < 8) {
-      move = [dx, dy]
+      move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
         console.log(move);
@@ -38,10 +38,10 @@
       }
     }
 
-    dx = this.pos[0]
-    dy = this.pos[1]
+    dx = this.pos[0];
+    dy = this.pos[1];
     while (dx < 8) {
-      move = [dx, dy]
+      move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
         console.log(move);
@@ -57,10 +57,10 @@
       }
     }
 
-    dx = this.pos[0]
-    dy = this.pos[1]
+    dx = this.pos[0];
+    dy = this.pos[1];
     while (dx >= 0) {
-      move = [dx, dy]
+      move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
         console.log(move);
@@ -76,10 +76,10 @@
       }
     }
 
-    dx = this.pos[0]
-    dy = this.pos[1]
+    dx = this.pos[0];
+    dy = this.pos[1];
     while (dy >= 0) {
-      move = [dx, dy]
+      move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
         horizMoves.push(move);
         console.log(move);

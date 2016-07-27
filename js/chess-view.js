@@ -16,11 +16,11 @@
   39: "right",
   40: "down",
   37: "left",
-  32: "select",
+  32: "select"
 };
 
-View.prototype.handleKeyEvent = function (event) {
-
+  View.prototype.handleKeyEvent = function (event) {
+  // Future implementation
   };
 
   View.prototype.handleClickEvent = function () {

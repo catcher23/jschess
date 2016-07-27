@@ -5,7 +5,4 @@
   var humanPlayer = JSChess.humanPlayer = function (options) {
     this.color = 'white'
   };
-
-  
-
 })();
