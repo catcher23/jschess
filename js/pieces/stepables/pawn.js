@@ -201,6 +201,8 @@
             return pos[0] === oldPos[0] + 1 && pos[1] === oldPos[1];
             };
       }
+      
+      
       // White
       if (this.board.grid[oldPos[0]][oldPos[1]].color === 'white') {
         if (oldPos[0] === 0){

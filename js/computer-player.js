@@ -29,10 +29,10 @@
     } else {
       this.isCheckMate(computerPieces);
       while (true) {
-        piece = this.pickRandomPiece(computerPieces);
+        var piece = this.pickRandomPiece(computerPieces);
 
         if (piece.allMoves().length !== 0) {
-          var randomIndex = Math.floor(Math.random() * (piece.allMoves().length))
+          var randomIndex = Math.floor(Math.random() * (piece.allMoves().length));
           newMove = piece.allMoves()[randomIndex];
           grid[piece.pos[0]][piece.pos[1]] = null;
           piece.pos = newMove;

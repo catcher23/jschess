@@ -40,13 +40,13 @@
       var flatCoord = (pos[0] * 8) + pos[1];
       this.$li.eq(flatCoord).addClass('selected');
 
-      pieceType = this.game.board.grid[pos[0]][pos[1]];
+      var pieceType = this.game.board.grid[pos[0]][pos[1]];
       pieceType.allMoves().forEach(function(move) {
         flatCoord = (move[0] * 8) + move[1];
         that.$li.eq(flatCoord).addClass('possibleMoves');
       });
 
-    };
+    }
   };
 
   View.prototype.render = function () {
@@ -54,7 +54,7 @@
 for (var i = 0; i < 8; i++) {
   for (var j = 0; j < 8; j++) {
     if (this.game.board.grid[i][j] !== null) {
-    className = this.game.board.grid[i][j].className;
+    var className = this.game.board.grid[i][j].className;
     this.updateClasses([i,j], className);
   } else {
     this.removeClasses([i,j])
@@ -87,7 +87,7 @@ for (var i = 0; i < 8; i++) {
       }
     }
     this.$el.append($ul);
-    this.$li = this.$el.find("li")
+    this.$li = this.$el.find("li");
 
 
     this.render();

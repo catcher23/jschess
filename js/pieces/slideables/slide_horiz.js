@@ -2,98 +2,116 @@
   if (typeof JSChess === "undefined") {
     window.JSChess = {};
   }
+
   var SlideHoriz = JSChess.SlideHoriz = function (options) {
     this.game = options.game;
     this.pos = options.pos;
-    this.board = options.board
+    this.board = options.board;
     JSChess.Piece.call(this, options)
   };
-    JSChess.Util.inherits(SlideHoriz, JSChess.Piece);
-  SlideHoriz.prototype.allMoves = function (pos) {
+
+  JSChess.Util.inherits(SlideHoriz, JSChess.Piece);
+
+  SlideHoriz.prototype.allMoves = function () {
     var moves = [];
   
     return moves.concat(this.horizMoves());
   };
 
-  SlideHoriz.prototype.horizMoves = function (pos) {
-    var horizMoves = [];
-    var move = '';
+  SlideHoriz.prototype.northMoves = function (dx, dy) {
+    var northMoves = [];
 
-    var dx = this.pos[0];
-    var dy = this.pos[1];
     while (dy < 8) {
-      move = [dx, dy];
+      var move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
-        horizMoves.push(move);
-        console.log(move);
+        northMoves.push(move);
         dy += 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
-        horizMoves.push(move);
+        northMoves.push(move);
         break;
       } else if (this.board.grid[dx][dy].pos == this.pos) {
         dy += 1;
-        continue;
       } else {
         break;
       }
     }
 
-    dx = this.pos[0];
-    dy = this.pos[1];
+    return northMoves;
+  };
+
+  SlideHoriz.prototype.eastMoves = function (dx, dy) {
+    var eastMoves = [];
+
     while (dx < 8) {
-      move = [dx, dy];
+      var move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
-        horizMoves.push(move);
-        console.log(move);
+        eastMoves.push(move);
         dx += 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
-        horizMoves.push(move);
+        eastMoves.push(move);
         break;
       } else if (this.board.grid[dx][dy].pos == this.pos) {
         dx += 1;
-        continue;
       } else {
         break;
       }
     }
 
-    dx = this.pos[0];
-    dy = this.pos[1];
+    return eastMoves;
+  };
+
+  SlideHoriz.prototype.westMoves = function (dx, dy) {
+    var westMoves = [];
+
     while (dx >= 0) {
-      move = [dx, dy];
+      var move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
-        horizMoves.push(move);
-        console.log(move);
+        westMoves.push(move);
         dx -= 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
-        horizMoves.push(move);
+        westMoves.push(move);
         break;
       } else if (this.board.grid[dx][dy].pos == this.pos) {
         dx -= 1;
-        continue;
       } else {
         break;
       }
     }
 
-    dx = this.pos[0];
-    dy = this.pos[1];
+    return westMoves;
+  };
+
+  SlideHoriz.prototype.southMoves = function (dx, dy) {
+    var southMoves = [];
+
     while (dy >= 0) {
-      move = [dx, dy];
+      var move = [dx, dy];
       if (this.board.grid[dx][dy] == null)  {
-        horizMoves.push(move);
-        console.log(move);
+        southMoves.push(move);
         dy -= 1;
       } else if (this.board.grid[dx][dy].color !== this.color) {
-        horizMoves.push(move);
+        southMoves.push(move);
         break;
       } else if (this.board.grid[dx][dy].pos == this.pos) {
         dy -= 1;
-        continue;
       } else {
         break;
       }
     }
-    return horizMoves;
+
+    return southMoves;
+  };
+
+  SlideHoriz.prototype.horizMoves = function () {
+    var horizMoves = [],
+      dx = this.pos[0],
+      dy = this.pos[1];
+
+    var southMoves = this.southMoves(dx, dy),
+      westMoves = this.westMoves(dx, dy),
+      eastMoves = this.eastMoves(dx, dy),
+      northMoves = this.northMoves(dx, dy);
+
+    return horizMoves.concat(southMoves, westMoves, eastMoves, northMoves);
   };
 })();

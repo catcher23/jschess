@@ -222,10 +222,6 @@ Board.prototype.selectValid = function () {
   }, 1600)
 };
 
-Board.prototype.checkMate = function (color) {
-return false
-};
-
 Board.prototype.inCheck = function (allMoves, color) {
   var that = this;
 
